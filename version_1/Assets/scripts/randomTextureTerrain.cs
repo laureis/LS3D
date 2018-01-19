@@ -5,19 +5,19 @@ using UnityEngine;
 public class randomTextureTerrain : MonoBehaviour {
 	int i;
 	TerrainData intialTerrain;
+	TerrainData newTerrain;
 	public Terrain terrain;
-	int r1,r2,r;
-	bool once=true;
+	int rand1,rand2;
+	int o = 0;
 	// Use this for initialization
 	void Start () {
 
-		r = Random.Range (2, 5);
+		terrain.terrainData.wavingGrassAmount = 0;
+		rand1 = Random.Range (2, 5);
 		intialTerrain = terrain.terrainData;
-		UpdateTerrainTexture(terrain.terrainData, 0, r);
-		r1 = r;
-		r = Random.Range (2, 5);
-		UpdateTerrainTexture(terrain.terrainData, 1, r);
-		r2 = r;
+		UpdateTerrainTexture(terrain.terrainData, 0, rand1);
+		rand2 = Random.Range (2, 5);
+		UpdateTerrainTexture(terrain.terrainData, 1, rand2);
 	}
 	
 	// Update is called once per frame
@@ -30,10 +30,14 @@ public class randomTextureTerrain : MonoBehaviour {
 			once = false;
 		}
 		Debug.Log (i);*/
-
+		//Debug.Log ("Offset : " + terrain.terrainData.splatPrototypes[rand1].tileOffset);
+		o++;
+		newTerrain = terrain.terrainData;
+		newTerrain.splatPrototypes[rand1].tileOffset = new Vector2(o, o);
+		newTerrain.splatPrototypes[rand2].tileOffset = new Vector2(o, o);
 		if (Input.GetKey ("escape")) {
-			UpdateTerrainTexture (terrain.terrainData, r1, 0);
-			UpdateTerrainTexture (terrain.terrainData, r2, 1);
+			UpdateTerrainTexture (terrain.terrainData, rand1, 0);
+			UpdateTerrainTexture (terrain.terrainData, rand2, 1);
 			Application.Quit ();
 		}
 		
