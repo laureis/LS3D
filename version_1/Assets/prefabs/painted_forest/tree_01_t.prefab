@@ -136,3 +136,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2e400b670501e1244a6fcd1ef89211a3, type: 2}
   - {fileID: 2100000, guid: 69e64d194b1da4c4b9ae170ab489177c, type: 2}
   - {fileID: 2100000, guid: 23837ef52851a3f46a75413009aaa9a1, type: 2}
+  allChildren: []
+  test: 1
+  timer: 0
+  frame: 0
