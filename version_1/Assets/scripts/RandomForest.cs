@@ -5,16 +5,19 @@ using UnityEngine;
 public class RandomForest : MonoBehaviour {
 
 
-	public GameObject treePrefab; 
+	public GameObject[] prefabs;
+	public int randomPrefab;
 	Vector3 pos;
 	public Terrain terrain;
 	public int nbTrees;
 	// Use this for initialization
 	void Start () {
-			
+
 		for(int i=0;i<nbTrees;i++){
+
+			randomPrefab = Random.Range (0, prefabs.Length);
 			pos=new Vector3(Random.Range(5,55),0,Random.Range(5,55));
-			GameObject tree = (GameObject)Instantiate(treePrefab, pos, transform.rotation);
+			GameObject tree = (GameObject)Instantiate(prefabs[randomPrefab], pos, transform.rotation);
 		}
 	}
 

@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442080}
   - component: {fileID: 3368188}
+  - component: {fileID: 114896092861048254}
   - component: {fileID: 2379080}
   - component: {fileID: 9552740}
   - component: {fileID: 13629080}
@@ -140,3 +141,16 @@ MonoBehaviour:
   test: 1
   timer: 0
   frame: 0
+--- !u!114 &114896092861048254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf0b015443d33f41b776975596725cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 0.5
+  rend: {fileID: 0}

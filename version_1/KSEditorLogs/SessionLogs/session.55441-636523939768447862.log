@@ -1,0 +1,64 @@
+2018-01-24 12:32:57.3948 [DEBUG] Validating model...
+2018-01-24 12:32:57.6758 [DEBUG] Model validated
+2018-01-24 12:32:57.6768 [DEBUG] Authenticating with server...
+2018-01-24 12:32:58.0828 [DEBUG] Connected to room. (55441:SceneFusion:SceneFusion)
+2018-01-24 12:32:58.0968 [INFO] Connected to server.
+2018-01-24 12:32:58.0968 [DEBUG] OS : Microsoft Windows NT 6.1.7601.0
+2018-01-24 12:32:58.0968 [DEBUG] Unity Version : 2017.1.0f3
+2018-01-24 12:32:58.0968 [DEBUG] Pro License : False
+2018-01-24 12:32:58.0968 [DEBUG] Platform : WindowsEditor
+2018-01-24 12:32:58.0978 [DEBUG] Build Target : StandaloneWindows64
+2018-01-24 12:32:58.0978 [DEBUG] Scene Fusion version : 1.7.2
+2018-01-24 12:32:58.0978 [DEBUG] Scene Fusion client build : 0
+2018-01-24 12:32:58.0978 [DEBUG] User : issalaure@gmail.com
+2018-01-24 12:32:58.0978 [DEBUG] Waiting for server response
+2018-01-24 12:32:58.2078 [DEBUG] Tier: Scene Fusion Free, Permissions: 00000500
+2018-01-24 12:32:58.2078 [DEBUG] User Permissions: FFFFFFFF
+2018-01-24 12:32:58.3588 [DEBUG] No stand-in for UnityEngine.CustomRenderTexture
+2018-01-24 12:32:58.3588 [DEBUG] No stand-in for UnityEngine.U2D.SpriteAtlas
+2018-01-24 12:32:58.3588 [DEBUG] No stand-in for UnityEngine.AI.NavMeshData
+2018-01-24 12:32:58.3588 [DEBUG] No stand-in for UnityEngine.AvatarMask
+2018-01-24 12:32:58.3588 [DEBUG] No stand-in for UnityEngine.Video.VideoClip
+2018-01-24 12:32:59.4229 [WARNING] Error loading component ':loadGrey': Could not find type 'loadGrey'.
+2018-01-24 12:32:59.9639 [DEBUG] Could not find class id for movingTexture.
+2018-01-24 12:32:59.9639 [DEBUG] Could not find class id for randomTexture.
+2018-01-24 12:32:59.9669 [WARNING] Property mismatch detected on 'randomTextureTerrain'. Your script source code may be out of sync.
+2018-01-24 12:32:59.9719 [DEBUG] Loading complete
+2018-01-24 12:33:19.2890 [DEBUG] Disconnecting temporarily to enter play mode.
+2018-01-24 12:33:19.2890 [DEBUG] Disconnecting from room (55441:SceneFusion:SceneFusion)
+2018-01-24 12:33:19.2930 [INFO] Disconnected from server.
+2018-01-24 12:33:19.2930 [DEBUG] Disconnect. (Duration: 20)
+2018-01-24 12:33:19.4410 [INFO] Static batching in play mode is not supported in a Scene Fusion session and will be temporarily disabled.
+2018-01-24 12:33:21.7612 [DEBUG] Scene Fusion version 1.7.2-0
+2018-01-24 12:33:21.9532 [DEBUG] Play mode: True, sync in play mode: False
+2018-01-24 12:33:22.1392 [DEBUG] Connecting to room (55441:SceneFusion:SceneFusion) via TCP at ec2-35-162-237-97.us-west-2.compute.amazonaws.com:1025
+2018-01-24 12:33:22.1572 [DEBUG] Guest connection. (Session: 55441)
+2018-01-24 12:33:22.7762 [DEBUG] Validating model...
+2018-01-24 12:33:22.9782 [DEBUG] Model validated
+2018-01-24 12:33:22.9792 [DEBUG] Authenticating with server...
+2018-01-24 12:33:23.2072 [DEBUG] Connected to room. (55441:SceneFusion:SceneFusion)
+2018-01-24 12:33:23.2262 [INFO] Connected to server.
+2018-01-24 12:33:23.2272 [DEBUG] OS : Microsoft Windows NT 6.1.7601.0
+2018-01-24 12:33:23.2272 [DEBUG] Unity Version : 2017.1.0f3
+2018-01-24 12:33:23.2272 [DEBUG] Pro License : False
+2018-01-24 12:33:23.2272 [DEBUG] Platform : WindowsEditor
+2018-01-24 12:33:23.2272 [DEBUG] Build Target : StandaloneWindows64
+2018-01-24 12:33:23.2272 [DEBUG] Scene Fusion version : 1.7.2
+2018-01-24 12:33:23.2272 [DEBUG] Scene Fusion client build : 0
+2018-01-24 12:33:23.2272 [DEBUG] User : issalaure@gmail.com
+2018-01-24 12:33:23.5103 [DEBUG] Tier: Scene Fusion Free, Permissions: 00000500
+2018-01-24 12:33:23.5103 [DEBUG] User Permissions: FFFFFFFF
+2018-01-24 12:33:23.5583 [DEBUG] No stand-in for UnityEngine.CustomRenderTexture
+2018-01-24 12:33:23.5583 [DEBUG] No stand-in for UnityEngine.U2D.SpriteAtlas
+2018-01-24 12:33:23.5583 [DEBUG] No stand-in for UnityEngine.AI.NavMeshData
+2018-01-24 12:33:23.5583 [DEBUG] No stand-in for UnityEngine.AvatarMask
+2018-01-24 12:33:23.5583 [DEBUG] No stand-in for UnityEngine.Video.VideoClip
+2018-01-24 12:33:46.7216 [DEBUG] Play mode: False
+2018-01-24 12:33:46.7846 [WARNING] Error loading component ':loadGrey': Could not find type 'loadGrey'.
+2018-01-24 12:33:47.1376 [DEBUG] Could not find class id for movingTexture.
+2018-01-24 12:33:47.1376 [DEBUG] Could not find class id for randomTexture.
+2018-01-24 12:33:47.1416 [WARNING] Property mismatch detected on 'randomTextureTerrain'. Your script source code may be out of sync.
+2018-01-24 12:33:47.1736 [DEBUG] Loading complete
+2018-01-24 12:35:36.4269 [DEBUG] Disconnecting from room (55441:SceneFusion:SceneFusion)
+2018-01-24 12:35:38.2420 [INFO] Disconnected from server.
+2018-01-24 12:35:38.2420 [DEBUG] Disconnect. (Duration: 110)
