@@ -3,47 +3,58 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
+using System.IO;
+using System.Collections.Generic;
+using System;
+using UnityEngine;
+
 
 public class randomTexture : MonoBehaviour {
-	
-	// Use this for initialization
-	public Material[] materials = new Material[10]; 
-	int r,timeToWait;
-	public Renderer[] allChildren;
-	public bool test =true;
-	public int timer;
-	public int frame =0;
-	void Start () {
-		
 
-		timer = Random.Range (60, 1000);
+	// Use this for initialization
+	public Material[] materials = new Material[10];
+	public Renderer[] allChildren;
+	public int frame = 0;
+	public int[] timers;
+	int size;
+	int currentPosition = 0;
+	int r;
+
+	void Start () {
+		allChildren = GetComponentsInChildren<Renderer> ();
+		size = allChildren.Length;
+		timers = new int[size];
+		for (int j = 0; j < size; j++) {
+			timers [j] = UnityEngine.Random.Range (250 , 1000);
+		}
+		Array.Sort(timers);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		frame++;
-		if (frame==timer) {
-			Renderer[] allChildren = GetComponentsInChildren<Renderer> ();
 
-			foreach (Renderer child in allChildren) {
+		if (isDone () == false) { 
+			if (frame == timers [currentPosition]) {
+
+				Renderer child = allChildren [currentPosition];
 				Material[] mats = new Material[child.materials.Length];
-				for (int j = 0; j < child.materials.Length; j++) {
-					r = Random.Range (0, materials.Length);
-					mats [j] = materials [r];
+				for (int i = 0; i < child.materials.Length; i++) {
+					r = UnityEngine.Random.Range (0, materials.Length);
+					mats [i] = materials [r];
 				}
-				child.materials = mats;
-			}
-
-			test = false;
+				allChildren [currentPosition].materials = mats;
+				currentPosition++;
+			} else
+				frame++;
 		}
-
 	}
 
+	bool isDone() {
+		return (currentPosition >= size);
+	}
 
-	IEnumerator GenerateTexture(int r, int j, Material[] materials,Renderer child, Material[] mats) {
-			r = Random.Range (0, materials.Length);
-			mats [j] = materials [r];
-			timeToWait = Random.Range (0, 1);
-			yield return new WaitForSeconds(timeToWait);
+	void shuffleChilds() {
+
+
 	}
 }

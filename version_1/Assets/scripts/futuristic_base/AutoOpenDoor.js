@@ -2,18 +2,18 @@
 
 private var anim : Animator;
 var character : GameObject;
-var distanceToOpen:float = 5;
+var distanceToOpen:float = 5; 
 private var characterNearbyHash : int = Animator.StringToHash("character_nearby");
 
 function Start () 
 {
     anim = GetComponent("Animator");
-    character = GameObject.Find("FPSController");
+    character= GameObject.Find("player");
 }
 
 
 function Update () 
-{
+{/*
 	var distance = Vector3.Distance(transform.position,character.transform.position);
 	
 	if (distanceToOpen>=distance){
@@ -21,4 +21,4 @@ function Update ()
     }else{
     	anim.SetBool(characterNearbyHash, false);
     }
-}
+*/}

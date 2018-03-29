@@ -9,11 +9,12 @@ GameObject:
   m_Component:
   - component: {fileID: 442080}
   - component: {fileID: 3368188}
-  - component: {fileID: 114896092861048254}
   - component: {fileID: 2379080}
   - component: {fileID: 9552740}
   - component: {fileID: 13629080}
   - component: {fileID: 114093625943432154}
+  - component: {fileID: 114470332066243434}
+  - component: {fileID: 114577508524094514}
   m_Layer: 0
   m_Name: tree_01_t
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.68, y: 185.71, z: 179.24}
+  m_LocalPosition: {x: 137.68, y: 182.59, z: 179.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -138,10 +139,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 69e64d194b1da4c4b9ae170ab489177c, type: 2}
   - {fileID: 2100000, guid: 23837ef52851a3f46a75413009aaa9a1, type: 2}
   allChildren: []
-  test: 1
-  timer: 0
   frame: 0
---- !u!114 &114896092861048254
+  timers: 
+--- !u!114 &114470332066243434
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -149,7 +149,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 159884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cf0b015443d33f41b776975596725cd, type: 3}
+  m_Script: {fileID: 11500000, guid: d5ae096fd9bd569419b0c48e63c475b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allChildren: []
+  greyMat: {fileID: 2100000, guid: ccea6ac61d00ea24dbd5d06db207f55b, type: 2}
+--- !u!114 &114577508524094514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e8f803eabbed0479c793464794c4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.5
