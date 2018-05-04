@@ -3,39 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class randomTextureTerrain : MonoBehaviour {
-	int i;
-	TerrainData intialTerrain;
+	
 	public Terrain terrain;
-	int r1,r2,r = 2;
+	
 	public int timer;
 	public int frame;
-	bool once=true;
-	int t;
-	// Use this for initialization
+	int totalTexture = 6;
+	int nextTexture;
 	void Start () {
-		timer = Random.Range (60, 1000);
+		
+		nextTexture = Random.Range(1,totalTexture);
+		timer = Random.Range (500, 1000);
 	}
 
-	// Update is called once per frame
 	void Update () {
-
-		/*i++;
-		if (i > 120 && once) {
-			UpdateTerrainTexture (terrain.terrainData, r1, 0);
-			UpdateTerrainTexture (terrain.terrainData, r2, 1);
-			once = false;
-		}
-		Debug.Log (i);*/
-
+		
 		frame++;
 		if (frame == timer) {
-			r = Random.Range (2, 5);
-			intialTerrain = terrain.terrainData;
-			UpdateTerrainTexture (terrain.terrainData, 0, r);
+			
+			UpdateTerrainTexture (terrain.terrainData, 0, nextTexture);
+			nextTexture = Random.Range(1, totalTexture);
+			frame = 0;
+			timer = Random.Range (500, 1000);
 		}
-
+		
 		if (Input.GetKey ("escape")) {
-			UpdateTerrainTexture (terrain.terrainData, r, 0);
+			UpdateTerrainTexture (terrain.terrainData, nextTexture, 0);
 			Application.Quit();
 		}
 

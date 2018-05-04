@@ -4,54 +4,148 @@ using UnityEngine;
 
 public class generatePlane : MonoBehaviour {
 
-	public Transform plane;
-	public Transform obj1;
-	public Transform obj2;
-	public Transform[] objects = new Transform[10];
+		/*
+		 * LEFT_UP UP RIGHT_UP
+		 * LEFT CENTER RIGHT 
+		 * LEFT_DOWN DOWN RIGHT_DOWN
+		 * 
+		
+		 0 3 6 
+		 1 4 7
+		 2 5 8
+		 * 
+		 
+		 */
 
-	// Use this for initialization
+	public enum  e_plane {
+		CENTER, UP, DOWN, LEFT, RIGHT, LEFT_UP, RIGHT_UP, LEFT_DOWN, RIGHT_DOWN, OOPS
+	}
+	
+	public GameObject[] terrainPrefabs = new GameObject[3];
+	public GameObject player;
+	private GameObject[] terrains = new GameObject[9];
+	private GameObject terrainPrefab;
+	
+	
 	void Start () {
 		
+		// one random terrain out of 3 possibilities per game ! 
+		terrainPrefab = terrainPrefabs[Random.Range(0,terrainPrefabs.Length)];
+		
+		// left
+		terrains [0] = (GameObject) Instantiate (terrainPrefab, new Vector3 (-400, 0, 400), Quaternion.identity);
+		terrains [1] = (GameObject) Instantiate (terrainPrefab, new Vector3 (-400, 0, 0), Quaternion.identity);
+		terrains [2]= (GameObject) Instantiate (terrainPrefab, new Vector3 (-400, 0, -400), Quaternion.identity);
+		
+		// center
+		terrains [3] = (GameObject) Instantiate (terrainPrefab, new Vector3 (0, 0, 400), Quaternion.identity);
+		terrains [4] = (GameObject) Instantiate (terrainPrefab, new Vector3 (0, 0, 0), Quaternion.identity);
+		terrains [5] = (GameObject) Instantiate (terrainPrefab, new Vector3 (0, 0, -400), Quaternion.identity);
+ 
+		// right
+		terrains [6] = (GameObject) Instantiate (terrainPrefab, new Vector3 (400, 0, 400), Quaternion.identity);
+		terrains [7] = (GameObject) Instantiate (terrainPrefab, new Vector3 (400, 0, 0), Quaternion.identity);
+		terrains [8] = (GameObject) Instantiate (terrainPrefab, new Vector3 (400, 0, -400), Quaternion.identity);
+
 	}
 
-	void GenerateRightUp(int x, int z) {
-		newPlane (x+400,z);
-		newPlane (x+400,z+400);
-		newPlane (x,z+400);
-	}//done
-
-	void GenerateRightDown(int x, int z) {
-		newPlane (x+400,z);
-		newPlane (x+400,z-400);
-		newPlane (x,z-400);
-	}//done
-
-	void GenerateLeftUp(int x, int z) {		
-		newPlane (x-400,z);
-		newPlane (x-400,z+400);
-		newPlane (x,z+400);
-	}
-
-	void GenerateLeftDown(int x, int z) {
-		newPlane (x-400,z);
-		newPlane (x-400,z-400);
-		newPlane (x,z-400);
-	}
-
-	// Update is called once per frame
 	void Update () {
 		
+		generateNext(whereIsUser());
 	}
-
-	void newPlane(int x, int z) {
-		int r1 = Random.Range (0, objects.Length);
-		obj1 = objects [r1];
-		int r2 = Random.Range (0, objects.Length);
-		obj2 = objects [r2];
-		Instantiate (plane, new Vector3 (x, 0, z), Quaternion.identity);
-		Instantiate (obj1, new Vector3 (x + 120, 0, z - 100), Quaternion.identity);
-		Instantiate (obj2, new Vector3 (x - 120, 0, z - 100), Quaternion.identity);
+	
+	
+	e_plane intToEnum(int n) {
+		
+		switch(n) {
+			
+			case 0: return e_plane.LEFT_UP;
+				break;
+			case 1: return e_plane.LEFT;
+				break;
+			case 2: return e_plane.LEFT_DOWN;
+				break;
+			case 3: return e_plane.UP;
+				break;
+			case 4: return e_plane.CENTER;
+				break;
+			case 5: return e_plane.DOWN;
+				break;
+			case 6: return e_plane.RIGHT_UP;
+				break;
+			case 7: return e_plane.RIGHT;
+				break;
+			case 8: return e_plane.RIGHT_DOWN;
+				break;
+			default: return e_plane.OOPS;
+		}
 	}
-
-
+	
+	// retourne le plane dans lequel se trouve l'utilisateur
+	e_plane whereIsUser() {
+	
+		for (int i = 0; i < terrains.Length; i++) {
+		
+			if ((player.transform.position.x <= terrains[i].transform.position.x + 200f) && 
+				(player.transform.position.x >= terrains[i].transform.position.x - 200f) && 
+				(player.transform.position.z <= terrains[i].transform.position.z + 200f) && 
+				(player.transform.position.z >= terrains[i].transform.position.z - 200f))
+			return intToEnum(i);
+		}
+		return e_plane.OOPS;
+	}
+	
+	void generateNext(e_plane currentPosition) {
+		
+		switch(currentPosition) {
+			
+			case e_plane.UP :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x, 0, terrains[i].transform.position.z+400);
+				}
+				break;
+				
+			case e_plane.DOWN :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x, 0, terrains[i].transform.position.z-400);
+				}
+				break;
+				
+			case e_plane.RIGHT :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x+400, 0, terrains[i].transform.position.z);
+				}
+				break;
+				
+			case e_plane.LEFT :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x-400, 0, terrains[i].transform.position.z);
+				}
+				break;
+				
+			case e_plane.RIGHT_UP :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x+400, 0, terrains[i].transform.position.z+400);
+				}
+				break;
+				
+			case e_plane.LEFT_UP :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x-400, 0, terrains[i].transform.position.z+400);
+				}
+				break;
+				
+			case e_plane.RIGHT_DOWN :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x+400, 0, terrains[i].transform.position.z-400);
+				}
+				break;
+			case e_plane.LEFT_DOWN :
+				for (int i = 0; i < terrains.Length; i++) {
+					terrains[i].transform.position = new Vector3 (terrains[i].transform.position.x-400, 0, terrains[i].transform.position.z-400);
+				}
+				break;
+			default:return;
+		}
+	}
 }

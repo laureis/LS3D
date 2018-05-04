@@ -157,6 +157,36 @@ ModelImporter:
     4300054: Tube002
     4300056: tube_colonne_centralle
     4300058: tube_colonne_centralle001
+    6400000: bras_006
+    6400002: bras_01_toit
+    6400004: bras_01_toit001
+    6400006: bras_02_Paroi
+    6400008: bras_02_Paroi001
+    6400010: bras_02_toit
+    6400012: bras_02_toit001
+    6400014: bras_03
+    6400016: bras_03_toit
+    6400018: bras_03_toit001
+    6400020: cylindre_002
+    6400022: cylindre_01
+    6400024: paroi_001
+    6400026: paroi_002
+    6400028: sol_bras_004
+    6400030: sol_bras_005
+    6400032: sol_bras_006
+    6400034: sol_bras_01
+    6400036: sol_bras_02
+    6400038: sol_bras_03
+    6400040: sol_complet
+    6400042: sol_complet001
+    6400044: toit_impaire_
+    6400046: toit_impaire_001
+    6400048: toit_paire_002
+    6400050: toit_paire_01
+    6400052: Tube001
+    6400054: Tube002
+    6400056: tube_colonne_centralle
+    6400058: tube_colonne_centralle001
   materials:
     importMaterials: 1
     materialName: 0
@@ -186,7 +216,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

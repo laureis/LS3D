@@ -33,10 +33,10 @@ public class proceduralDeplacement : MonoBehaviour {
 		timeSinceLastDirectionChoice = Time.time - startTime;
 	  if(timeSinceLastDirectionChoice > deltaTime){
 			startTime = Time.time;
-			Debug.Log(transform.position);
+			//Debug.Log(transform.position);
 
 			direction = Random.Range(0,3);
-			Debug.Log(direction);
+			//Debug.Log(direction);
 
 			switch (direction) {
 				case 0 :

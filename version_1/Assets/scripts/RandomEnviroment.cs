@@ -20,6 +20,7 @@ public class RandomEnviroment : MonoBehaviour {
 		RightDown = false;
 		LeftUp = false;
 		LeftDown = false;
+		Player= GameObject.Find("[CameraRig]");
 	}
 
 	void GenerateRightUP(float x, float z) {
@@ -70,7 +71,7 @@ public class RandomEnviroment : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	/*void Update () {
 		positionPlayer = Player.transform.position;
 		if (positionPlayer.x < 200f && positionPlayer.x > 10f) {
 			if (positionPlayer.y > 10f && positionPlayer.y < 200f) {
@@ -84,7 +85,7 @@ public class RandomEnviroment : MonoBehaviour {
 			} else if (positionPlayer.y < -10f && positionPlayer.y > -200f) 
 				GenerateLeftDown (plane.position.x,plane.position.z);
 		}
-	}	
+	}	*/
 }
 
 
